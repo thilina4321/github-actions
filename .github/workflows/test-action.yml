@@ -1,0 +1,13 @@
+name: "Test project workflow"
+on: push
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get code"
+        uses: actions/checkout@v3
+      - name: "Install dependencies"
+        uses: npm ci
+      - name: "Excute tests"
+        uses: npm test
