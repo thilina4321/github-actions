@@ -5,7 +5,7 @@ describe('App component', ()=>{
     test('check the available text', ()=>{
         render(<App />)
         const text = screen.getByText('Learn & Master GitHub Actions')
-        expect(text).toBeInTheDocument()
+        expect(text).not.toBeInTheDocument()
         
     })
 })
