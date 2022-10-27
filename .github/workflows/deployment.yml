@@ -11,7 +11,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: cache-node-modules-${{ hashFile(**/package.lock.json) }}
+          key: cache-node-modules-${{ hashFiles('**/package.lock.json') }}
       - name: install dependencies
         run: npm ci
       - name: run test cases
@@ -26,7 +26,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: cache-node-modules-${{ hashFiles(**/package.lock.json) }}
+          key: cache-node-modules-${{ hashFiles('**/package.lock.json') }}
       - name: install dependencies
         run: npm ci
       - name: build app
